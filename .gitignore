@@ -1,3 +1,2 @@
 result/
-# Options are specific to each host and may contain sensitive data, so they are ignored
-hosts/**/options.nix
+

@@ -21,11 +21,12 @@ in
     # unstable.jetbrains.pycharm-professional # Python IDE
     unstable.jetbrains.phpstorm # PHP IDE
     # unstable.jetbrains.datagrip # Database IDE from JetBrains
+    # unstable.android-studio # Official IDE for Android (stable channel)
     starship # Cross-shell prompt
     nurl # Nixos URL fetcher generator
     nix-init # Nixos package generator
     slack # Desktop client for Slack
-    devenv # Fast, Declarative, Reproducible, and Composable Developer Environments
+    unstable.devenv # Fast, Declarative, Reproducible, and Composable Developer Environments
     bat # Cat clone with syntax highlighting and Git integration
     btop # Monitor of resources
     gh # GitHub CLI tool

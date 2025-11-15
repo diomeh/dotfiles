@@ -15,7 +15,6 @@ in
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/starship.nix
     ../../modules/home-manager/lazygit.nix
-    ../../modules/home-manager/devenv.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

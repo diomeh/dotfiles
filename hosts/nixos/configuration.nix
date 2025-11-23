@@ -7,7 +7,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
 
     # Import the user-defined options.
     ./options.nix
@@ -31,7 +31,8 @@
     ../../modules/nixos/settings/locales.nix
     ../../modules/nixos/settings/mounts.nix
     ../../modules/nixos/settings/network.nix
-    ../../modules/nixos/settings/numlock.nix
+    # This does not work
+    # ../../modules/nixos/settings/numlock.nix
     ../../modules/nixos/settings/sound.nix
     ../../modules/nixos/settings/x11.nix
 

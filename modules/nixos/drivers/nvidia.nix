@@ -6,19 +6,19 @@
 }:
 
 {
-	boot = {
+  boot = {
     # Add Nvidia beta kernel module to the initrd
-		extraModulePackages = [ config.boot.kernelPackages.nvidia_x11_beta ];
-		initrd.kernelModules = [ "nvidia" ];
+    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11_beta ];
+    initrd.kernelModules = [ "nvidia" ];
 
     # Preserve video memory after suspend/resume cycles to avoid graphical corruption
     # TODO: is not clear if this actually works, see https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Preserve_video_memory_after_suspend
-		kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
-	};
+    kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+  };
 
   # Nvidia CUDA toolkit
   # FIXME: should be moved to a separate module, requires a lot of dependencies, see https://nixos.wiki/wiki/CUDA
-	# environment.systemPackages = with pkgs; [
+  # environment.systemPackages = with pkgs; [
   #   linuxPackages.nvidia_x11
   #   cudaPackages.cudatoolkit
   # ];
@@ -32,7 +32,7 @@
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
     # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
     # of just the bare essentials.
     powerManagement.enable = false;
 
@@ -42,9 +42,9 @@
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Support is limited to the Turing and later architectures. Full list of
+    # supported GPUs is at:
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
     open = false;

@@ -42,7 +42,7 @@ let
     # directory
     "[](bg:color_yellow fg:color_orange)$directory"
 
-    # git 
+    # git
     "[](fg:color_yellow bg:color_aqua)$git_branch$git_commit$git_status$git_state[](fg:color_aqua)"
 
     # separate left and right side
@@ -67,193 +67,192 @@ in
     enable = true;
 
     # Configuration written to ~/.config/starship.toml
-    settings =
-      {
-        "$schema" = "https://starship.rs/config-schema.json";
+    settings = {
+      "$schema" = "https://starship.rs/config-schema.json";
 
-        # Concat all prompt segments into a single string
-        format = builtins.concatStringsSep "" prompt_segments;
-        continuation_prompt = "[](bold fg:color_green)";
+      # Concat all prompt segments into a single string
+      format = builtins.concatStringsSep "" prompt_segments;
+      continuation_prompt = "[](bold fg:color_green)";
 
-        line_break.disabled = false;
+      line_break.disabled = false;
 
-        fill = {
-          disabled = false;
-          symbol = " ";
-          style = "";
+      fill = {
+        disabled = false;
+        symbol = " ";
+        style = "";
+      };
+
+      palette = "diomir";
+      palettes.diomir = {
+        color_fg0 = "#fbf1c7";
+        color_bg1 = "#3c3836";
+        color_bg3 = "#665c54";
+        color_blue = "#458588";
+        color_aqua = "#689d6a";
+        color_green = "#98971a";
+        color_orange = "#d65d0e";
+        color_purple = "#b16286";
+        color_red = "#cc241d";
+        color_yellow = "#d79921";
+      };
+
+      os = {
+        disabled = false;
+        style = "bg:color_orange fg:color_fg0";
+
+        symbols = {
+          Windows = "󰍲 ";
+          Ubuntu = "󰕈 ";
+          SUSE = " ";
+          Raspbian = "󰐿 ";
+          Mint = "󰣭 ";
+          Macos = "󰀵 ";
+          Manjaro = " ";
+          Linux = " 󰌽";
+          Gentoo = "󰣨 ";
+          Fedora = "󰣛 ";
+          Alpine = " ";
+          Amazon = " ";
+          Android = " ";
+          Arch = "󰣇 ";
+          Artix = "󰣇 ";
+          EndeavourOS = " ";
+          CentOS = " ";
+          Debian = "󰣚 ";
+          Redhat = "󱄛 ";
+          RedHatEnterprise = "󱄛 ";
+          NixOS = "";
         };
+      };
 
-        palette = "diomir";
-        palettes.diomir = {
-          color_fg0 = "#fbf1c7";
-          color_bg1 = "#3c3836";
-          color_bg3 = "#665c54";
-          color_blue = "#458588";
-          color_aqua = "#689d6a";
-          color_green = "#98971a";
-          color_orange = "#d65d0e";
-          color_purple = "#b16286";
-          color_red = "#cc241d";
-          color_yellow = "#d79921";
+      sudo = {
+        disabled = false;
+        style = "bg:color_orange fg:color_fg0";
+        format = "[ $symbol ]($style)";
+        symbol = " ";
+      };
+
+      username = {
+        show_always = true;
+        style_user = "bg:color_orange fg:color_fg0";
+        style_root = "bg:color_orange fg:color_fg0";
+        format = ''[ $user ]($style)'';
+      };
+
+      directory = {
+        style = "fg:color_fg0 bg:color_yellow";
+        format = "[ $path ]($style)[$read_only]($read_only_style)";
+        truncation_length = 5;
+        truncation_symbol = "…/";
+        read_only = " ";
+        read_only_style = "fg:color_red bg:color_yellow";
+
+        substitutions = {
+          "home" = " ";
+          "Documents" = "󰈙 ";
+          "Downloads" = " ";
+          "Music" = "󰝚 ";
+          "Pictures" = " ";
+          "/mnt/drive" = "󱛟 ";
+          "/mnt/drive/dev" = " ";
         };
+      };
 
-        os = {
-          disabled = false;
-          style = "bg:color_orange fg:color_fg0";
+      git_branch = {
+        symbol = " ";
+        style = "bg:color_aqua";
+        format = ''[[ $symbol$branch(:$remote_branch) ](fg:color_fg0 bg:color_aqua)]($style)'';
+      };
 
-          symbols = {
-            Windows = "󰍲 ";
-            Ubuntu = "󰕈 ";
-            SUSE = " ";
-            Raspbian = "󰐿 ";
-            Mint = "󰣭 ";
-            Macos = "󰀵 ";
-            Manjaro = " ";
-            Linux = " 󰌽";
-            Gentoo = "󰣨 ";
-            Fedora = "󰣛 ";
-            Alpine = " ";
-            Amazon = " ";
-            Android = " ";
-            Arch = "󰣇 ";
-            Artix = "󰣇 ";
-            EndeavourOS = " ";
-            CentOS = " ";
-            Debian = "󰣚 ";
-            Redhat = "󱄛 ";
-            RedHatEnterprise = "󱄛 ";
-            NixOS = "";
-          };
-        };
+      git_commit = {
+        style = "bg:color_aqua";
+        format = ''[[ $hash@$tag ](fg:color_fg0 bg:color_aqua)]($style)'';
+        only_detached = true;
+      };
 
-        sudo = {
-          disabled = false;
-          style = "bg:color_orange fg:color_fg0";
-          format = "[ $symbol ]($style)";
-          symbol = " ";
-        };
+      git_state = {
+        style = "bg:color_aqua";
+        format = ''[[ $state($progress_current/$progress_total) ](fg:color_fg0 bg:color_aqua)]($style)'';
+      };
 
-        username = {
-          show_always = true;
-          style_user = "bg:color_orange fg:color_fg0";
-          style_root = "bg:color_orange fg:color_fg0";
-          format = ''[ $user ]($style)'';
-        };
+      git_status = {
+        ignore_submodules = true;
+        style = "bg:color_aqua";
+        format = ''[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'';
+        conflicted = "󰵉 ";
+        ahead = " ";
+        behind = " ";
+        diverged = " ";
+        up_to_date = "";
+        untracked = " ";
+        stashed = "󰆼 ";
+        modified = "󰦒 ";
+        staged = " ";
+        renamed = " ";
+        deleted = " ";
+        typechanged = "";
+      };
 
-        directory = {
-          style = "fg:color_fg0 bg:color_yellow";
-          format = "[ $path ]($style)[$read_only]($read_only_style)";
-          truncation_length = 5;
-          truncation_symbol = "…/";
-          read_only = " ";
-          read_only_style = "fg:color_red bg:color_yellow";
+      docker_context = {
+        symbol = " ";
+        style = "bg:color_blue";
+        format = ''[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'';
+      };
 
-          substitutions = {
-            "home" = " ";
-            "Documents" = "󰈙 ";
-            "Downloads" = " ";
-            "Music" = "󰝚 ";
-            "Pictures" = " ";
-            "/mnt/drive" = "󱛟 ";
-            "/mnt/drive/dev" = " ";
-          };
-        };
+      conda = {
+        style = "bg:color_blue";
+        format = ''[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'';
+      };
 
-        git_branch = {
-          symbol = " ";
-          style = "bg:color_aqua";
-          format = ''[[ $symbol$branch(:$remote_branch) ](fg:color_fg0 bg:color_aqua)]($style)'';
-        };
+      direnv = {
+        disabled = false;
+        style = "bg:color_blue";
+        format = ''[[ $symbol($loaded) ](fg:#83a598 bg:color_bg3)]($style)'';
+        loaded_msg = "";
+        unloaded_msg = "✘";
+      };
 
-        git_commit = {
-          style = "bg:color_aqua";
-          format = ''[[ $hash@$tag ](fg:color_fg0 bg:color_aqua)]($style)'';
-          only_detached = true;
-        };
+      nix_shell = {
+        style = "bg:color_blue";
+        format = ''[[ $symbol$state ](fg:#83a598 bg:color_bg3)]($style)'';
+        symbol = " ";
+        impure_msg = " ";
+        pure_msg = "";
+      };
 
-        git_state = {
-          style = "bg:color_aqua";
-          format = ''[[ $state($progress_current/$progress_total) ](fg:color_fg0 bg:color_aqua)]($style)'';
-        };
+      time = {
+        disabled = false;
+        time_format = "%R";
+        style = "bg:color_bg1";
+        format = ''[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'';
+      };
 
-        git_status = {
-          ignore_submodules = true;
-          style = "bg:color_aqua";
-          format = ''[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'';
-          conflicted = "󰵉 ";
-          ahead = " ";
-          behind = " ";
-          diverged = " ";
-          up_to_date = "";
-          untracked = " ";
-          stashed = "󰆼 ";
-          modified = "󰦒 ";
-          staged = " ";
-          renamed = " ";
-          deleted = " ";
-          typechanged = "";
-        };
+      status = {
+        disabled = false;
+        style = "bg:color_bg1";
+        format = ''[[ $symbol$status ](fg:color_fg0 bg:color_bg1)]($style)'';
+        symbol = "✘";
+        not_executable_symbol = " ";
+        not_found_symbol = " ";
+        sigint_symbol = " ";
+        signal_symbol = "󱐋";
+        map_symbol = true;
+        pipestatus = true;
+        pipestatus_format = ''\[$pipestatus\] => [$symbol$common_meaning$signal_name$maybe_int](fg:color_fg0 bg:color_bg1)]($style)'';
+      };
 
-        docker_context = {
-          symbol = " ";
-          style = "bg:color_blue";
-          format = ''[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'';
-        };
-
-        conda = {
-          style = "bg:color_blue";
-          format = ''[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'';
-        };
-
-        direnv = {
-          disabled = false;
-          style = "bg:color_blue";
-          format = ''[[ $symbol($loaded) ](fg:#83a598 bg:color_bg3)]($style)'';
-          loaded_msg = "";
-          unloaded_msg = "✘";
-        };
-
-        nix_shell = {
-          style = "bg:color_blue";
-          format = ''[[ $symbol$state ](fg:#83a598 bg:color_bg3)]($style)'';
-          symbol = " ";
-          impure_msg = " ";
-          pure_msg = "";
-        };
-
-        time = {
-          disabled = false;
-          time_format = "%R";
-          style = "bg:color_bg1";
-          format = ''[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'';
-        };
-
-        status = {
-          disabled = false;
-          style = "bg:color_bg1";
-          format = ''[[ $symbol$status ](fg:color_fg0 bg:color_bg1)]($style)'';
-          symbol = "✘";
-          not_executable_symbol = " ";
-          not_found_symbol = " ";
-          sigint_symbol = " ";
-          signal_symbol = "󱐋";
-          map_symbol = true;
-          pipestatus = true;
-          pipestatus_format = ''\[$pipestatus\] => [$symbol$common_meaning$signal_name$maybe_int](fg:color_fg0 bg:color_bg1)]($style)'';
-        };
-
-        character = {
-          disabled = false;
-          success_symbol = ''[ ](bold fg:color_green)'';
-          error_symbol = ''[✘](bold bg:color_red)[ ](bold fg:color_red)'';
-          vimcmd_symbol = ''[ ](bold fg:color_green)'';
-          vimcmd_replace_one_symbol = ''[ ](bold fg:color_purple)'';
-          vimcmd_replace_symbol = ''[ ](bold fg:color_purple)'';
-          vimcmd_visual_symbol = ''[ ](bold fg:color_yellow)'';
-        };
-      }
-      # Add custom language configurations
-      # e.g lang = {symbol, style, format}
-      // mkLangMap lang_symbols lang_style lang_format;
+      character = {
+        disabled = false;
+        success_symbol = ''[ ](bold fg:color_green)'';
+        error_symbol = ''[✘](bold bg:color_red)[ ](bold fg:color_red)'';
+        vimcmd_symbol = ''[ ](bold fg:color_green)'';
+        vimcmd_replace_one_symbol = ''[ ](bold fg:color_purple)'';
+        vimcmd_replace_symbol = ''[ ](bold fg:color_purple)'';
+        vimcmd_visual_symbol = ''[ ](bold fg:color_yellow)'';
+      };
+    }
+    # Add custom language configurations
+    # e.g lang = {symbol, style, format}
+    // mkLangMap lang_symbols lang_style lang_format;
   };
 }

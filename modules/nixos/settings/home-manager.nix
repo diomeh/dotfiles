@@ -1,4 +1,9 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 let
   hostname = "nixos";
 in
@@ -13,7 +18,7 @@ in
 
     # Backup dotfiles files when doing rebuilds in case of conflicts
     # Useful when migrating a package from nixpkgs to home-manager
-    backupFileExtension = "backup"; 
+    backupFileExtension = "backup";
 
     users = {
       "${config.users.default.username}" = import ../../../hosts/${hostname}/home.nix;

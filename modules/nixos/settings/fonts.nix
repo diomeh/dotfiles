@@ -12,7 +12,7 @@
     nerd-fonts.geist-mono
   ];
 
-  fonts.fontconfig.defaultFonts.monospace = [ 
+  fonts.fontconfig.defaultFonts.monospace = [
     "GeistMono"
     "Symbols Nerd Font"
     "DejaVu Sans Mono"

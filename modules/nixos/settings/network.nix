@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
   # Enables wireless support via wpa_supplicant.
-  # networking.wireless.enable = true;  
+  # networking.wireless.enable = true;
 
   # IPV6 fails to connect and is unreachable from https://ipleak.net/, disable it for lack of better solution for now.
   networking.enableIPv6 = false;

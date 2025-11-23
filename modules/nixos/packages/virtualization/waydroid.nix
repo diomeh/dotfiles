@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   # WayDroid requires a Wayland desktop session and cannot be used on X11 directly, but can be run in a nested Wayland session, using e.g. cage.
   # See https://www.hjdskes.nl/projects/cage
@@ -25,5 +30,7 @@
   };
 
   # Set proper permissions for the shared folder
-  systemd.tmpfiles.rules = [ "d ${config.users.default.home}/Waydroid 0755 ${config.users.default.username} users -" ];
+  systemd.tmpfiles.rules = [
+    "d ${config.users.default.home}/Waydroid 0755 ${config.users.default.username} users -"
+  ];
 }

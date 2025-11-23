@@ -2,14 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/nixos/hyprland.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/nixos/hyprland.nix
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -59,8 +64,11 @@
     variant = "altgr-intl";
   };
 
-	# Enable experimental features
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  # Enable experimental features
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   environment.sessionVariables = {
     # For nix helper
@@ -93,9 +101,12 @@
   users.users.diomeh = {
     isNormalUser = true;
     description = "diomeh";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   # Enable automatic login for the user.

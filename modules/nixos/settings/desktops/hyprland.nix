@@ -1,8 +1,15 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 let
   use_nvidia_gpu = config.boot.kernelPackages == pkgs.linuxPackages.nvidia_x11;
-in {
+in
+{
   # Enable Hyprland
   programs.hyprland = {
     enable = true;
@@ -52,5 +59,5 @@ in {
   };
 
   # fix https://github.com/ryan4yin/nix-config/issues/10
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 }

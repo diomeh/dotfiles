@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   # Enable libvirt virtualisation
   virtualisation = {
@@ -46,7 +51,7 @@
   services.spice-vdagentd.enable = true;
 
   # Force disable libvirt service so that it is not started at boot
-  systemd.services.libvirtd.wantedBy = lib.mkForce [];
-  systemd.services.libvirt-guests.wantedBy = lib.mkForce [];
-  systemd.services.spice-vdagentd.wantedBy = lib.mkForce [];
+  systemd.services.libvirtd.wantedBy = lib.mkForce [ ];
+  systemd.services.libvirt-guests.wantedBy = lib.mkForce [ ];
+  systemd.services.spice-vdagentd.wantedBy = lib.mkForce [ ];
 }

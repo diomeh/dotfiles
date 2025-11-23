@@ -10,34 +10,36 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    # Match configuration name to system hostname for automatic selection
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/nixos/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    {
+      # Match configuration name to system hostname for automatic selection
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/nixos/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+        vm = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/vm/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
       };
-      vm = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/vm/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
-      };
-    };
 
-    homeConfigurations = {
-      nixos = inputs.home-manager.lib.homeManagerConfiguration {
-        inherit inputs;
-        configuration = ./hosts/nixos/home.nix;
-      };
-      vm = inputs.home-manager.lib.homeManagerConfiguration {
-        inherit inputs;
-        configuration = ./hosts/vm/home.nix;
+      homeConfigurations = {
+        nixos = inputs.home-manager.lib.homeManagerConfiguration {
+          inherit inputs;
+          configuration = ./hosts/nixos/home.nix;
+        };
+        vm = inputs.home-manager.lib.homeManagerConfiguration {
+          inherit inputs;
+          configuration = ./hosts/vm/home.nix;
+        };
       };
     };
-  };
 }

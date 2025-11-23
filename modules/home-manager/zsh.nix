@@ -20,7 +20,7 @@
       size = 10000; # Number of history lines to save in the history list.
     };
 
-    plugins = [];
+    plugins = [ ];
 
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza --git --icons"; # Display icons and git status
@@ -32,9 +32,9 @@
       ldir = "l -D"; # [D]irectories only
       lfil = "l -f"; # [f]iles only
       lf = "l | fzf"; # [f]uzzy search
-      lg = "l | grep --recursive --ignore-case"; # list and find [r]ecursively and case [i]nsensitive 
+      lg = "l | grep --recursive --ignore-case"; # list and find [r]ecursively and case [i]nsensitive
 
-      protontricks="flatpak run com.github.Matoking.protontricks";
+      protontricks = "flatpak run com.github.Matoking.protontricks";
 
       # HACK: allow for dsu's paste to take priority over the system's paste
       # Ideally, we should be able to solve this at the dsu derivation level

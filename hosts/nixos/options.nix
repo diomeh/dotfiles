@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -8,12 +13,16 @@ let
     isNormalUser = true; # Is this a human user?
     username = "diomeh";
     description = "diomeh";
-    groups = ["wheel" "networkmanager"];
+    groups = [
+      "wheel"
+      "networkmanager"
+    ];
     shell = pkgs.zsh;
     home = "/home/diomeh";
     pkgs = with pkgs; [ ];
   };
-in {
+in
+{
   options = {
     users.default = mkOption {
       type = types.attrs;

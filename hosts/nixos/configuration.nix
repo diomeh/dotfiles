@@ -65,7 +65,7 @@
     # Import custom packages
     # Infinite recursion ?????????????
     # Importing in modules/nixos/packages/misc.nix causes no problems
-    # (import ../../modules/nixos/packages/custom { inherit pkgs; }) 
+    # (import ../../modules/nixos/packages/custom { inherit pkgs; })
 
     # Gaming related stuff
     # ../../modules/nixos/packages/gaming/launchers.nix
@@ -90,7 +90,10 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   # Enable nix commands and flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

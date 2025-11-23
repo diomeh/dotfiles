@@ -79,6 +79,9 @@ config.keys = {{
 -- Scrollbar
 config.enable_scroll_bar = true
 
+-- Window size
+config.initial_cols = 135
+
 -- Other
 config.check_for_updates = false
 

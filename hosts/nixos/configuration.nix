@@ -14,8 +14,7 @@
 
     # Import drivers
     ../../modules/nixos/drivers/opengl.nix
-    # FIXME: when nvidia drivers are installed, SDDM cannot perform login and gets stuck after inputting password
-    # ../../modules/nixos/drivers/nvidia.nix
+    ../../modules/nixos/drivers/nvidia.nix
     ../../modules/nixos/drivers/power-management.nix
 
     # Import users

@@ -1,0 +1,42 @@
+# wezterm color scheme derived from kitty VSCode_Dark theme
+# see: https://github.com/kovidgoyal/kitty-themes/blob/master/themes/VSCode_Dark.conf
+
+[colors]
+foreground = "#D4D4D4"
+background = "#1E1E1E"
+cursor_bg = "#AEAFAD"
+cursor_border = "#AEAFAD"
+cursor_fg = "#1E1E1E"
+selection_fg = "#FFFFFF"
+selection_bg = "#264F78"
+
+# ANSI (normal) colors
+ansi = [
+  "#000000",  # black
+  "#CD3131",  # red
+  "#0DBC79",  # green
+  "#e5e510",  # yellow
+  "#2472C8",  # blue
+  "#BC3FBC",  # magenta
+  "#11A8CD",  # cyan
+  "#E5E5E5"   # white
+]
+
+# ANSI (bright) colors
+brights = [
+  "#666666",  # bright black / gray
+  "#F14C4C",  # bright red
+  "#23D18B",  # bright green
+  "#F5F543",  # bright yellow
+  "#3B8EEA",  # bright blue
+  "#D670D6",  # bright magenta
+  "#29B8DB",  # bright cyan
+  "#E5E5E5"   # bright white
+]
+
+# Optional: tab bar, if desired
+[colors.tab_bar]
+background = "#2d2d2d"
+active_tab = { bg_color = "#3c3c3c", fg_color = "#d4d4d4" }
+inactive_tab = { bg_color = "#2d2d2d", fg_color = "#888888" }
+new_tab = { bg_color = "#2d2d2d", fg_color = "#888888" }

@@ -48,14 +48,12 @@
     ../../modules/nixos/packages/misc.nix
     ../../modules/nixos/packages/mullvad.nix
     ../../modules/nixos/packages/nix-helper.nix
-    # FIXME: error: expected a set but found a list: [ "-e" «thunk» ]
     ../../modules/nixos/packages/nix-ld.nix
     ../../modules/nixos/packages/nixfmt.nix
     ../../modules/nixos/packages/office.nix
     ../../modules/nixos/packages/openssl.nix
     ../../modules/nixos/packages/package-managers.nix
     # ../../modules/nixos/packages/rclone.nix
-    # FIXME: The option definition `services.samba.extraConfig' no longer has any effect; please remove it. Use services.samba.settings instead.
     # ../../modules/nixos/packages/samba.nix
     ../../modules/nixos/packages/sys-utils.nix
     ../../modules/nixos/packages/zsh.nix

@@ -57,7 +57,6 @@
     # ../../modules/nixos/packages/samba.nix
     ../../modules/nixos/packages/sys-utils.nix
     ../../modules/nixos/packages/zsh.nix
-    # FIXME: error: 'gnome3' has been renamed to/replaced by 'gnome'
     # ../../modules/nixos/packages/xdm.nix
 
     # Import custom packages

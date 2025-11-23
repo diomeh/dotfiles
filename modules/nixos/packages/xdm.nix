@@ -6,8 +6,8 @@ let
   xdm = pkgs.fetchFromGitHub {
     owner = "Diomeh";
     repo = "nix-xdm";
-    rev = "0.0.1";
-    hash = "sha256-uME0V2thw0ANiqAgFHnSlPWG7Lg3iR1QLkcsFdQ0bT8=";
+    rev = "0.0.4";
+    hash = "sha256-d2F8lOBXP4wMLnuaQ4/mDUeKQeCr57diqCn5DO9vGAA=";
   };
 in
 {

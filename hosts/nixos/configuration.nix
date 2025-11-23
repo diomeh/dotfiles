@@ -50,6 +50,7 @@
     ../../modules/nixos/packages/nix-helper.nix
     # FIXME: error: expected a set but found a list: [ "-e" «thunk» ]
     # ../../modules/nixos/packages/nix-ld.nix
+    ../../modules/nixos/packages/nixfmt.nix
     ../../modules/nixos/packages/office.nix
     ../../modules/nixos/packages/openssl.nix
     ../../modules/nixos/packages/package-managers.nix

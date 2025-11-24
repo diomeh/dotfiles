@@ -22,4 +22,9 @@
       "uid=1000"
     ];
   };
+
+  fileSystems."/mnt/drive" = {
+    device = "/dev/disk/by-uuid/21385dd3-c78c-4b37-9910-62669628312b";
+    fsType = "ext4";
+  };
 }

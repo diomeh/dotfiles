@@ -1,7 +1,7 @@
 { ... }:
 {
   networking.firewall = {
-    enable = false;
+    enable = true;
 
     allowedTCPPorts = [
       80
@@ -28,6 +28,9 @@
       "wlo1" # Wifi interface
     ];
   };
+
+  # Enable nftables firewall backend
+  networking.nftables.enable = true;
 
   # Set cloudflare DNS servers
   networking.nameservers = [

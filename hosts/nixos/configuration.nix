@@ -51,6 +51,7 @@
     ../../modules/nixos/packages/nixfmt.nix
     ../../modules/nixos/packages/office.nix
     ../../modules/nixos/packages/openssl.nix
+    ../../modules/nixos/packages/openvpn.nix
     ../../modules/nixos/packages/package-managers.nix
     # ../../modules/nixos/packages/rclone.nix
     # ../../modules/nixos/packages/samba.nix

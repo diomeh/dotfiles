@@ -13,7 +13,7 @@
   services.desktopManager.plasma6.enableQt5Integration = true;
 
   environment.systemPackages = with pkgs; [
-    libsForQt5.kcalc # KDE Calculator
+    kdePackages.kcalc # KDE Calculator
   ];
 
   # Install KDE Partition Manager

@@ -7,7 +7,7 @@
   # Nerd Fonts
   fonts.packages = with pkgs; [
     corefonts
-    vistafonts
+    vista-fonts
     nerd-fonts.symbols-only
     nerd-fonts.geist-mono
   ];

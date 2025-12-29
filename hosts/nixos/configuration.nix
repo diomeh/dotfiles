@@ -36,7 +36,6 @@
     ../../modules/nixos/settings/x11.nix
 
     # Import DE
-    # ../../modules/nixos/settings/desktops/kde5.nix
     ../../modules/nixos/settings/desktops/kde6.nix
     # ../../modules/nixos/settings/desktops/hyprland.nix
 

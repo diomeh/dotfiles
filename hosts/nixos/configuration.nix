@@ -43,6 +43,7 @@
     ../../modules/nixos/packages/browsers.nix
     ../../modules/nixos/packages/development.nix
     ../../modules/nixos/packages/direnv.nix
+    ../../modules/nixos/packages/gamedev.nix
     ../../modules/nixos/packages/misc.nix
     ../../modules/nixos/packages/mullvad.nix
     ../../modules/nixos/packages/nix-helper.nix

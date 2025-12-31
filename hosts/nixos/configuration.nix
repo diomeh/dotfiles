@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -91,6 +91,15 @@
     "nix-command"
     "flakes"
   ];
+
+  # Any miscellaneous packages not covered elsewhere and limited to this host only.
+  environment.systemPackages = with pkgs; [
+    vesktop # Discord 3rd party chat client, see https://github.com/Vencord/Vesktop
+  ];
+
+  networking.hosts = {
+    "127.0.0.1" = [ "dev.member-portal.lc" ];
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

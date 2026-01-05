@@ -13,7 +13,7 @@
   environment.systemPackages = with pkgs; [
     wineWowPackages.stable # wine 64-bit
     winetricks
-    protonup # Proton GE
+    protonup-ng # Proton GE
 
     # For ModOrganizer 2
 

@@ -34,6 +34,7 @@ in
     nodejs_22 # Event-driven I/O framework for the V8 JavaScript engine
     act # Run your GitHub Actions locally
     postman # API Development Environment
+    claude-code # Agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
   ];
 
   # Set user as trusted user of nix store

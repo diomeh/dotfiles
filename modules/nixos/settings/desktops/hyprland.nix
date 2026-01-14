@@ -45,6 +45,8 @@ in
     grim # Screenshot tool
     slurp # Select tool
     wl-clipboard # Clipboard manager
+    xdg-desktop-portal-hyprland # Hyprland portal for xdg-desktop-portal
+    kdePackages.xdg-desktop-portal-kde # KDE portal backend
   ];
 
   services.displayManager.sddm.wayland.enable = true;
@@ -52,9 +54,10 @@ in
   # Enable desktop portals
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    xdgOpenUsePortals = true; # Sets environment variable NIXOS_XDG_OPEN_USE_PORTAL to 1
     extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
+      xdg-desktop-portal-hyprland
+      kdePackages.xdg-desktop-portal-kde
     ];
   };
 

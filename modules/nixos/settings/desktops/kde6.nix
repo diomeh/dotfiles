@@ -16,7 +16,17 @@
     kdePackages.kcalc # KDE Calculator
   ];
 
-  # Install KDE Partition Manager
+  # Enable desktop portals
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true; # Enable for Wayland sessions
+    xdgOpenUsePortal = true; # Sets environment variable NIXOS_XDG_OPEN_USE_PORTAL to 1
+    config = {
+      kde.default = [ "kde" "gtk" ];
+    };
+  };
+
+  # KDE Partition Manager
   programs.partition-manager.enable = true;
 
   # KDE Connect

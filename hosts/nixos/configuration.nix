@@ -94,7 +94,6 @@
 
   # Any miscellaneous packages not covered elsewhere and limited to this host only.
   environment.systemPackages = with pkgs; [
-    vesktop # Discord 3rd party chat client, see https://github.com/Vencord/Vesktop
   ];
 
   networking.hosts = {

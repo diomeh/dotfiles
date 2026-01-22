@@ -35,6 +35,7 @@ in
     act # Run your GitHub Actions locally
     postman # API Development Environment
     claude-code # Agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
+    opencode # Terminal-based AI agent
   ];
 
   # Set user as trusted user of nix store

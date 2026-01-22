@@ -65,9 +65,9 @@
     # (import ../../modules/nixos/packages/custom { inherit pkgs; })
 
     # Gaming related stuff
-    # ../../modules/nixos/packages/gaming/launchers.nix
-    # ../../modules/nixos/packages/gaming/steam.nix
-    # ../../modules/nixos/packages/gaming/wine.nix
+    ../../modules/nixos/packages/gaming/launchers.nix
+    ../../modules/nixos/packages/gaming/steam.nix
+    ../../modules/nixos/packages/gaming/wine.nix
 
     # Virtualization
     ../../modules/nixos/packages/virtualization/docker.nix

@@ -3,6 +3,8 @@
   programs.git = {
     enable = true;
 
+    lfs.enable = true; # Enable Git large file storage support
+
     # System dependent config file that may or may not exist
     includes = [ { path = "~/.gitconfig.local"; } ];
 

@@ -36,6 +36,7 @@ in
     postman # API Development Environment
     claude-code # Agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
     opencode # Terminal-based AI agent
+    bun # Fast JavaScript runtime like Node.js
   ];
 
   # Set user as trusted user of nix store

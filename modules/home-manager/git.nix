@@ -73,7 +73,7 @@
         lc = "last-changes";
 
         # Config related
-        list-config = "config --list --show-origin --show-scope | awk '{ print $1 \" -- \" $2 }' | sort | uniq";
+        list-config = ''!git config --list --show-origin --show-scope | awk '{ print $1 " -- " $2 }' | sort | uniq'';
         list-aliases = "config --show-scope --get-regexp ^alias\\.";
 
         llc = "list-config";

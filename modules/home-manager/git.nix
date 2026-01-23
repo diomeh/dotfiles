@@ -27,6 +27,7 @@
       };
       core = {
         pager = "less -FX";
+        excludesfile = "~/.global.gitignore";
       };
       safe = {
         directory = "/etc/nixos";
@@ -75,9 +76,11 @@
         # Config related
         list-config = ''!git config --list --show-origin --show-scope | awk '{ print $1 " -- " $2 }' | sort | uniq'';
         list-aliases = "config --show-scope --get-regexp ^alias\\.";
+        list-ignored = "ls-files --ignored --exclude-standard --others --directory";
 
         llc = "list-config";
         lla = "list-aliases";
+        lli = "list-ignored";
       };
     };
 

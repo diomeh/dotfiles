@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     # gimp-with-plugins # GNU Image Manipulation Program
     # qbittorrent # A free and open-source BitTorrent client
-    # vlc # A free and open-source media player
+    vlc # A free and open-source media player
     thunderbird # Thunderbird email client
     # kdePackages.kio-gdrive # KIO Slave to access Google Drive
     # kdePackages.kaccounts-providers # KDE accounts providers

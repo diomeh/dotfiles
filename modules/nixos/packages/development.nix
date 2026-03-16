@@ -34,7 +34,6 @@ in
     nodejs_22 # Event-driven I/O framework for the V8 JavaScript engine
     act # Run your GitHub Actions locally
     postman # API Development Environment
-    claude-code # Agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
     opencode # Terminal-based AI agent
     bun # Fast JavaScript runtime like Node.js
   ];
@@ -45,4 +44,12 @@ in
     "root"
     "${config.users.default.username}"
   ];
+
+  # Local development domains (easier setup than catching *.test with dnsmasq or similar)
+  networking.hosts = {
+    "127.0.0.1" = [
+      "poc_pos.test"
+      "ecom.test"
+    ];
+  };
 }

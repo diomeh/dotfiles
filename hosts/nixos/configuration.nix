@@ -96,10 +96,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  networking.hosts = {
-    "127.0.0.1" = [ "dev.member-portal.lc" ];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

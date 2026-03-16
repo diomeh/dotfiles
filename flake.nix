@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Custom overlay for claude-code
+    # See: https://github.com/sadjow/claude-code-nix?tab=readme-ov-file#using-nix-flakes
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs =
@@ -35,10 +39,22 @@
         nixos = inputs.home-manager.lib.homeManagerConfiguration {
           inherit inputs;
           configuration = ./hosts/nixos/home.nix;
+          modules = [
+            {
+              nixpkgs.overlays = [ inputs.claude-code.overlays.default ];
+              home.packages = [ nixpkgs.pkgs.claude-code ];
+            }
+          ];
         };
         vm = inputs.home-manager.lib.homeManagerConfiguration {
           inherit inputs;
           configuration = ./hosts/vm/home.nix;
+          modules = [
+            {
+              nixpkgs.overlays = [ inputs.claude-code.overlays.default ];
+              home.packages = [ nixpkgs.pkgs.claude-code ];
+            }
+          ];
         };
       };
     };

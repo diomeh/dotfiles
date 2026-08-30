@@ -56,12 +56,16 @@
   # Needed for Mullvad VPN (see: https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/8?u=lion)
   services.resolved = {
     enable = true;
-    dnssec = "true";
-    domains = [ "~." ];
-    fallbackDns = [
-      "1.1.1.1"
-      "1.0.0.1"
-    ];
-    dnsovertls = "true";
+    settings = {
+      Resolve = {
+        DNSOverTLS = true;
+        DNSSEC = true;
+        Domains = [ "~." ];
+        FallbackDNS = [
+          "1.1.1.1"
+          "1.0.0.1"
+        ];
+      };
+    };
   };
 }

@@ -1,4 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let
+  nixos-2411 = import <nixos-24.11> {
+    # reuse the current configuration
+    config = config.nixpkgs.config;
+  };
+in
 {
   environment.systemPackages = with pkgs; [
     git # Git version control
@@ -7,7 +13,7 @@
     wget # A network utility to retrieve files from the Web
     curl # A command line tool and library for transferring data with URLs
     pciutils # PCI bus related utilities
-    neofetch # A command-line system information tool
+    nixos-2411.neofetch # A command-line system information tool
     tlrc # TLDR man pages written in Rust
     lshw # A small tool to provide detailed information on the hardware configuration of the machine
     lsof # A utility to list open files
